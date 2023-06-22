@@ -1,16 +1,12 @@
-{% extends 'base/base.html' %}
-{% block content %}
-{% for flower in flowers %}
-<div class="card">
-<div class="card-body">
-<h5 class="card-title">{{ flower.title }}</h5>
-<p class="card-text">Lorem ipsum, dolor sit amet cons\
-ectetur adipisicing elit.</p>
-<a href="/admin/myapp/flower/{{ flower.id }}/change/"\
-class="card-link">Edit</a>
-<a href="/admin/myapp/flower/{{ flower.id }}/delete/"\
-class="card-link">Delete</a>
-</div>
-</div>
-{% endfor %}
+{% extends 'base/base.html' %} {% block content %} 
+<div class="card-columns"> <!-- here -->
+    {% for flower in flowers %}
+    <div class="card">
+    <div class="card-body">
+    <h5 class="card-title">{{ flower.title }}</h5>
+    {% comment %} <p class="card-text">{{ flower.description | truncate:100 }}</p> <!-- here --> {% endcomment %}
+    ...
+    </div>
+    </div>
+    {% endfor %}
 {% endblock %}
