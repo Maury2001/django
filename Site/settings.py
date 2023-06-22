@@ -37,9 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'App',
     'base',
 ]
+SITE_ID =1
+EMAIL_BACKEND = 'django.core.mall.backends.console.EmailBackend'
+LOGIN_REDIRECT_URL ='/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
